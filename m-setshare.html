@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://www.iapp-media.com/basic/Setting2.aspx -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script async="" src="js/analytics.js"></script>
+    <title>set</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/m-setshare.css">
+</head>
+
+<body>
+    <div class="alldiv">
+        <ul class="phonesize">
+            <li class="top">
+                <div class="left"><img src="img/iapplogo.png" class="toplogo" align="left"></div>
+                <div class="right">
+                    <a id="home" href="index.html"><img src="img/cancel-01.png" class="cancel" align="right"></a>
+                </div>
+            </li>
+            <li>
+                <p>透過以下方式熱分享</p>
+            </li>
+            <li class="padimg">
+                <a id="fb" href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent('http://www.iapp-media.net/iappsocial/'))));">
+                    <img src="img/sharefb.png" alt="">
+                </a>
+            </li>
+            <li class="padimg">
+                <a id="twitter" href="javascript: void(window.open('http://twitter.com/home/?status='.concat(encodeURIComponent('iApp!')) .concat('打造你我自己的行動App...') .concat(encodeURIComponent('http://www.iapp-media.net/iappsocial/'))));">
+                    <img src="img/sharetwitter.png" alt="">
+                </a>
+            </li>
+            <li class="padimg">
+                <a id="line" href="http://line.naver.jp/R/msg/text/?http://www.iapp-media.net/iappsocial/"><img src="img/shareline.png" alt=""></a>
+            </li>
+        </ul>
+    </div>
+    <script>
+    (function() {
+        var objectId = getValue('id');
+        document.getElementById('fb').href = 'http://www.facebook.com/share.php?u=' + encodeURIComponent('http://www.iapp-media.net/iappsocial/index.html?id=' + objectId);
+        document.getElementById('twitter').href = 'http://twitter.com/home/?status='.concat(encodeURIComponent('iApp!')).concat('打造你我自己的行動App...').concat(encodeURIComponent('http://www.iapp-media.net/iappsocial/index.html?id=' + objectId));
+        document.getElementById('line').href = 'http://line.naver.jp/R/msg/text/?http://www.iapp-media.net/iappsocial/index.html?id=' + objectId;
+        document.getElementById('home').href = 'index.html?id=' + objectId;
+    })();
+
+    function getValue(varname) {
+        var url = window.location.href;
+        var qparts = url.split("?");
+        if (qparts.length === 0) {
+            return "";
+        }
+        var query = qparts[1];
+        var vars = query.split("&");
+        var value = "";
+        for (var i = 0; i < vars.length; i++) {
+            var parts = vars[i].split("=");
+            if (parts[0] == varname) {
+                value = parts[1];
+                break;
+            }
+        }
+        value = unescape(value);
+        value.replace(/\+/g, " ");
+        return value;
+    }
+    </script>
+</body>
+
+</html>
