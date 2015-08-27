@@ -241,7 +241,7 @@
         aspectRatio: naturalWidth / naturalHeight,
         rotate: 0
       };
-      console.log(this.image);
+      // console.log(this.image);
       this.url = url;
       this.ready = true;
       this.build();
