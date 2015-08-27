@@ -36,13 +36,15 @@
     <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
     <link rel="stylesheet" type="text/css" href="css/cropper.css">
     <link rel="stylesheet" type="text/css" href="css/mobileEditor.css">
+    <script src="js/exif.js"></script>
     <!--    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
 -->
 </head>
 
 <body>
     <div id="loading">iApp 載入中</div>
-    <img src="img/ajax-loader.gif" id="uploading" style=" display:none; position:absolute; left:calc(50% - 64px); top:calc(50%); z-index:5000;">
+    <div id="uploading">
+        <img src="img/ajax-loader.gif"></div>
     <div class="upload-img">
         <div class="top">
             <img src="img/iapplogo.png" class="toplogo" align="left">
@@ -61,7 +63,8 @@
                 <img id="preview" src="">
             </div>
             <div class="img-container">
-                <img src="" alt="支持圖片上傳格式JPG,PNG">
+                <img id="tmp" src="" alt="支持圖片上傳格式JPG,PNG">
+                <!-- <canvas id="cvs" style="display:none;"></canvas> -->
             </div>
             <p class="word">(移動及縮放進行照片裁切)</p>
             <input id="CurrentId" value="" class="hide">
@@ -212,10 +215,14 @@
             <div class="bg"></div>
             <img class="logo2 animated bounce" src="img/logo2.png" />
             <!--<img class="qr animated fadeIn" src="img/qr.jpg" />-->
-            <div class="lasttextbox"><br>
-                <p class="text4 animated fadeIn" style="color: white">[發佈公告]</p><br>
+            <div class="lasttextbox">
+                <br>
+                <p class="text4 animated fadeIn" style="color: white">[發佈公告]</p>
+                <br>
                 <p class="text5 animated fadeIn" style="color: white">為尊重圖像版權，敬請全面更換圖片！ 為您的iApp填加<a class="text_color">色彩</a>。
-                </p><br> <br>
+                </p>
+                <br>
+                <br>
             </div>
             <!-- <input type="image" onclick="Preview();" class="share animated pulse" src="img/preview-1.png" /> -->
             <!--img class="share animated pulse" src="img/preview-1.png" /-->
@@ -234,7 +241,7 @@
     <script src="js/JIC.js" type="text/javascript"></script>
     <!-- // <script src="js/maker.js"></script> -->
     <script src="js/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- // <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
     <script src="js/toParse.js"></script>
     <script src="js/cropper.js"></script>
     <script src="js/mobileEditor.js"></script>
@@ -247,7 +254,6 @@
             $(".pages").hide();
             $('.send').hide();
             $('.cut').show();
-            // $('#cut').attr("disabled", true);
             $('.rotate-btn').hide();
         });
         $(".cut").click(function() {
