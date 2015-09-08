@@ -60,16 +60,16 @@ function parseLogIn() {
 }
 
 function fbLogIn() {
-  Parse.FacebookUtils.logIn("email", {
+  Parse.FacebookUtils.logIn(null , {
     success: function(user) {
       if (!user.existed()) {
         alert("User signed up and logged in through Facebook!");
       } else {
         alert("User logged in through Facebook!");
       }
-      FB.api('/me', function(response) {
-        console.log(JSON.stringify(response));
-      });
+      // FB.api('/me', function(response) {
+      //   console.log(JSON.stringify(response));
+      // });
     },
     error: function(user, error) {
       alert("User cancelled the Facebook login or did not fully authorize.");
