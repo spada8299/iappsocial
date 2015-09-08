@@ -67,7 +67,9 @@ function fbLogIn() {
       } else {
         alert("User logged in through Facebook!");
       }
-      console.log(user);
+      FB.api('/me', function(response) {
+        console.log(JSON.stringify(response));
+      });
     },
     error: function(user, error) {
       alert("User cancelled the Facebook login or did not fully authorize.");
