@@ -71,6 +71,7 @@ function fbLogIn() {
         alert("User logged in through Facebook!");
       }
       FB.api('/me?fields=id,name,email', function(response) {
+        user.set("name", response.name);
         user.set("email", response.email);
         user.save();
       });
