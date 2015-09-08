@@ -68,7 +68,8 @@ function fbLogIn() {
         alert("User logged in through Facebook!");
       }
       FB.api('/me?fields=id,name,email', function(response) {
-        console.log(response.email);
+        user.set("email", response.email);
+        user.save();
       });
     },
     error: function(user, error) {
