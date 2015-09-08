@@ -67,7 +67,7 @@ function fbLogIn() {
       } else {
         alert("User logged in through Facebook!");
       }
-      FB.api('/me', function(response) {
+      FB.api(user, function(response) {
         console.log(JSON.stringify(response));
       });
     },
