@@ -34,9 +34,12 @@ function parseSignUp() {
   user.set("name", $('#name').val());
   user.set("password", $('#register-password').val());
   user.set("username", $('#register-email').val());
+  user.set("email", $('#register-email').val());
   user.signUp(null, {
     success: function(user) {
       alert('signUp success!');
+      window.location = 'm-login.html';
+      return null;
       // Hooray! Let them use the app now.
     },
     error: function(user, error) {
