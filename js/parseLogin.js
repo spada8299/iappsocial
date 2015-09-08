@@ -60,7 +60,7 @@ function parseLogIn() {
 }
 
 function fbLogIn() {
-  Parse.FacebookUtils.logIn(null , {
+  Parse.FacebookUtils.logIn("email" , {
     success: function(user) {
       if (!user.existed()) {
         alert("User signed up and logged in through Facebook!");
