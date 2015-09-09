@@ -80,7 +80,7 @@ function fbLogIn() {
       alert("User cancelled the Facebook login or did not fully authorize.");
     }
   });
-  FB.api('/me?fields=id,name,email', function(response) {
+  FB.api('/me?fields=id,name,email,picture', function(response) {
     console.log(response);
   });
 }
