@@ -39,6 +39,17 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
     </script>
+    <script>
+        $(document).ready(function() {
+            var currentUser = Parse.User.current();
+            if(currentUser){
+                FB.api('/me?fields=picture', function(response) {
+                    var userPicture = response.picture.data.url;
+                });
+                $('.content').append('<img src="' userPicture '">');
+            }
+        });
+    </script>
     <!-- mobile會員登入畫面 -->
     <div class="login-mobile">
         <div class="navbar">
