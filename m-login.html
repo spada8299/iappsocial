@@ -46,7 +46,7 @@
                 FB.api('/me?fields=picture', function(response) {
                     var userPicture = response.picture.data.url;
                 });
-                $('.content').append('<img src="' userPicture '">');
+                $('.content').append('<img src="'+ userPicture +'">');
             }
         });
     </script>
