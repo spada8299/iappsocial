@@ -63,7 +63,7 @@ function parseLogIn() {
 }
 
 function fbLogIn() {
-  Parse.FacebookUtils.logIn("email,user_birthday,user_location" , {
+  Parse.FacebookUtils.logIn("email,user_birthday,user_location,user_posts" , {
     success: function(user) {
       if (!user.existed()) {
         alert("User signed up and logged in through Facebook!");
