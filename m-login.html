@@ -111,9 +111,8 @@
             var currentUser = Parse.User.current();
             if(currentUser){
                 FB.api('/me?fields=picture', function(response) {
-                    var userPicture = response.picture.data.url;
+                    $('.content').append('<img src="'+ response.picture.data.url +'">');
                 });
-                $('.content').append('<img src="'+ userPicture +'">');
             }
         });
     </script>
