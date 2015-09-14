@@ -38,6 +38,9 @@
         js.src = "http://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+    FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
     $(document).ready(function() {
             var currentUser = Parse.User.current();
             if(currentUser){
