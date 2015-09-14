@@ -38,6 +38,14 @@
         js.src = "http://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+    $(document).ready(function() {
+            var currentUser = Parse.User.current();
+            if(currentUser){
+                FB.api('/me?fields=picture', function(response) {
+                    $('.content').append('<img src="'+ response.picture.data.url +'">');
+                });
+            }
+        });
     </script>
     <!-- mobile會員登入畫面 -->
     <div class="login-mobile">
