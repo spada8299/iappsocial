@@ -26,6 +26,9 @@
         });
 
         // Run code after the Facebook SDK is loaded.
+        FB.getLoginStatus(function(response) {
+            console.log(response);
+        });
     };
 
     (function(d, s, id) {
@@ -38,17 +41,6 @@
         js.src = "http://connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-    FB.getLoginStatus(function(response) {
-            console.log(response);
-        });
-    $(document).ready(function() {
-            var currentUser = Parse.User.current();
-            if(currentUser){
-                FB.api('/me?fields=picture', function(response) {
-                    $('.content').append('<img src="'+ response.picture.data.url +'">');
-                });
-            }
-        });
     </script>
     <!-- mobile會員登入畫面 -->
     <div class="login-mobile">
@@ -118,14 +110,14 @@
     <script src="js/m-login.js"></script>
     <script src="js/parseLogin.js"></script>
     <script>
-        $(document).ready(function() {
-            var currentUser = Parse.User.current();
-            if(currentUser){
-                FB.api('/me?fields=picture', function(response) {
-                    $('.content').append('<img src="'+ response.picture.data.url +'">');
-                });
-            }
-        });
+        // $(document).ready(function() {
+        //     var currentUser = Parse.User.current();
+        //     if(currentUser){
+        //         FB.api('/me?fields=picture', function(response) {
+        //             $('.content').append('<img src="'+ response.picture.data.url +'">');
+        //         });
+        //     }
+        // });
     </script>
 </body>
 
